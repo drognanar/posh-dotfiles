@@ -1,14 +1,3 @@
-# Git aliases
-function g     { git status @args }
-function gist  { git status @args }
-function glo   { git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit -- }
-function gcam  { git commit -a -m "$args" }
-function gca   { git commit -a @args }
-function gd    { git diff @args }
-function gb    { git branch @args }
-function gp    { git push @args }
-function gpu   { git pull @args }
-
 # Python aliases
 function py2   { py -2.7 @args }
 function py3   { py -3.5 @args }
