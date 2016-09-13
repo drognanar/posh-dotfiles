@@ -16,9 +16,16 @@ Set-PSReadlineKeyHandler -BriefDescription GitPush `
                          -ScriptBlock { Invoke-Shortcut 'git push' }
 
 Set-PSReadlineKeyHandler -BriefDescription GitPull `
-                         -LongDescription 'Execute git pull' `
+                         -LongDescription 'Create a git pull command' `
                          -Key Ctrl+p `
-                         -ScriptBlock { Invoke-Shortcut 'git pull --rebase' }
+                         -ScriptBlock {
+  $pulls = Get-History | ? { $_.CommandLine -like 'git pull --rebase *' }
+  if ($null -ne $pulls) {
+    Invoke-Shortcut -SkipAcceptLine $pulls[-1]
+  } else {
+    Invoke-Shortcut -SkipAcceptLine "git pull --rebase $global:SoPoshPullRemote $global:SoPoshPullBranch"
+  }
+}
 
 Set-PSReadlineKeyHandler -BriefDescription GitCommit `
                          -LongDescription 'Execute git commit' `
