@@ -16,6 +16,7 @@ Export-ModuleMember `
   -Function @(
     'Test-Internet'
     'g'
+    'gb'
     'gist'
     'glo'
     'gcam'

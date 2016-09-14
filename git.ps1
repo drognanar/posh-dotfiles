@@ -1,7 +1,7 @@
 # Git aliases
 function g     { git status @args }
 function gist  { git status @args }
-function glo   { git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit -- }
+function glo   { git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit @args }
 function gcam  { git commit -a -m "$args" }
 function gcmt  { git commit -m "$args" }
 function gca   { git commit -a @args }
