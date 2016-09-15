@@ -23,7 +23,7 @@ function wallpapers { start "~\AppData\Local\Packages\Microsoft.Windows.ContentD
 Set-Alias code Invoke-VsCode
 Set-Alias c code
 Set-Alias z Set-JumpLocation
-function c.    { code . }
+function c.([switch]$NewWindow) { code . -NewWindow:$NewWindow }
 
 # Misc aliases
 Set-Alias up Test-Internet
